@@ -1,15 +1,11 @@
 # 02 - Exploratory Data Analysis
 
-**Goal:** understand sales patterns, products, stores and customers.
+**Goal:** understand sales patterns, products, stores and customers in the cleaned data.
 
-## Questions to answer
-- How do sales trend by month, weekday and holiday?
-- Which categories and products drive revenue and margin?
-- How does performance differ by store and county type (urban / peri-urban / rural)?
-- What is the payment mix (M-Pesa, cash, card, Airtel Money) and is it shifting?
-- How do loyalty tiers and age groups differ in spend?
+## Contents
+- `02_eda.ipynb` - the analysis (overview, distributions, trends and seasonality, stores, products, customers, payments and promotions)
+- `findings.md` - the five findings that matter most, with numbers and recommended actions
+- `figures/` - 10 charts exported by the notebook
 
-## Planned contents
-- `eda.ipynb`
-- `figures/` - exported charts
-- `findings.md` - key insights in plain language
+## Run
+Run milestone 2 first (it creates `data/clean/sales_clean.csv`), then run all cells of the notebook.
