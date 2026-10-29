@@ -118,8 +118,13 @@ has_cust = rng.random(len(baskets)) < 0.58
 baskets["customer_id"] = np.where(has_cust, rng.choice(customers.customer_id.values, len(baskets), p=cust_w), None)
 
 lines = baskets.loc[baskets.index.repeat(baskets.n_lines)].reset_index(drop=True)
+# Each basket gets distinct products (weighted sampling without replacement, Efraimidis-Spirakis),
+# so a repeated transaction/product line is always a data error, never a real purchase.
 pw = (products.popularity / products.popularity.sum()).values
-lines["product_id"] = rng.choice(products.product_id.values, len(lines), p=pw)
+keys = rng.random((len(baskets), len(products))) ** (1 / pw)
+order = np.argsort(-keys, axis=1)[:, :9]
+mask = np.arange(9)[None, :] < baskets.n_lines.values[:, None]
+lines["product_id"] = products.product_id.values[order[mask]]
 lines["quantity"] = 1 + rng.poisson(0.6, len(lines))
 lines = lines.merge(products[["product_id", "unit_price"]], on="product_id", how="left")
 lines = lines.merge(promo_lookup[["date", "product_id", "promo_id", "discount_pct"]],

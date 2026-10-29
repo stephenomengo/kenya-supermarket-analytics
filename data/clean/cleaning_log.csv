@@ -1,0 +1,5 @@
+step,issue,rows_affected,action
+1,Exact duplicate lines,604,"Dropped, kept first occurrence"
+2,Negative quantity,302,Took absolute value (line_total was positive)
+3,Unit price 10x catalogue,151,Replaced with catalogue price
+4,Missing payment_method,1121,Filled from other lines in same transaction; rest set to 'Unknown'

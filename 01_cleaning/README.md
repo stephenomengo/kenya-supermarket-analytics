@@ -1,14 +1,21 @@
 # 01 - Data Cleaning & Preparation
 
-**Goal:** profile the raw data, document every quality issue, and produce clean tables without touching `data/raw/`.
+**Goal:** find the data-quality problems in the raw sales data, fix each one with evidence, and produce clean tables without touching `data/raw/`.
 
-## Planned contents
-- `01_profiling.ipynb` - row counts, nulls, duplicates, outliers, date ranges
-- `02_cleaning.ipynb` - fixes applied, with before/after counts
-- `cleaning_log.md` - each issue, how many rows, and the decision taken
+## Contents
+- `01_cleaning.ipynb` - the full pipeline (load, validate, profile, fix, build features, validate, save)
+- `../data/clean/cleaning_log.csv` - one row per fix with the number of rows affected
+- `../data/clean/sales_clean.csv` - cleaned table (created by the notebook, not tracked in Git because of its size)
 
-## Known issues to find
-Missing payment methods, negative quantities, unit-price outliers (about 10x), duplicate transaction lines.
+## Issues found and fixed
+| Issue | Rows | Fix |
+|---|---|---|
+| Exact duplicate lines | 604 | Dropped, kept first |
+| Negative quantity | 302 | Absolute value (line total was still positive) |
+| Unit price 10x catalogue price | 151 | Restored from product catalogue |
+| Missing payment method | 1,208 | Filled from the same transaction (1,121); rest labelled `Unknown` (87) |
 
-## Output
-Cleaned CSVs saved to `data/clean/`.
+Missing `customer_id` (guest checkout) and `promo_id` (no promotion) are not errors, so they are kept and flagged.
+
+## Run
+Run `src/data_generation/generate_data.py` first, then open the notebook and run all cells. Output: 302,076 clean rows with 32 columns.
