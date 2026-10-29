@@ -1,0 +1,99 @@
+product_id,product_name,category,unit_price,unit_cost
+P001,Maize Flour - Family,Staples & Grains,260,192
+P002,Pishori Rice - Family,Staples & Grains,435,341
+P003,Wheat Flour - Regular,Staples & Grains,145,107
+P004,Wheat Flour - Family,Staples & Grains,275,211
+P005,Sugar - Small,Staples & Grains,90,69
+P006,Sugar - Regular,Staples & Grains,155,124
+P007,Sugar - Family,Staples & Grains,280,202
+P008,Cooking Oil - Family,Staples & Grains,585,509
+P009,Spaghetti - Small,Staples & Grains,65,56
+P010,Spaghetti - Regular,Staples & Grains,115,85
+P011,Spaghetti - Family,Staples & Grains,205,149
+P012,Beans - Small,Staples & Grains,115,83
+P013,Beans - Family,Staples & Grains,355,268
+P014,Salt - Small,Staples & Grains,30,23
+P015,Salt - Regular,Staples & Grains,50,38
+P016,Salt - Family,Staples & Grains,95,74
+P017,Fresh Milk - Small,Dairy & Eggs,40,28
+P018,Yoghurt - Small,Dairy & Eggs,55,45
+P019,Yoghurt - Regular,Dairy & Eggs,90,69
+P020,Butter - Family,Dairy & Eggs,445,387
+P021,Eggs Tray - Small,Dairy & Eggs,245,180
+P022,Eggs Tray - Regular,Dairy & Eggs,425,297
+P023,Eggs Tray - Family,Dairy & Eggs,780,607
+P024,Cheese Slices - Small,Dairy & Eggs,190,163
+P025,Cheese Slices - Family,Dairy & Eggs,610,511
+P026,Black Tea Leaves - Small,Beverages,75,59
+P027,Black Tea Leaves - Family,Beverages,220,185
+P028,Instant Coffee - Small,Beverages,235,179
+P029,Instant Coffee - Family,Beverages,705,600
+P030,Bottled Water - Small,Beverages,35,28
+P031,Bottled Water - Regular,Beverages,60,42
+P032,Bottled Water - Family,Beverages,100,70
+P033,Fruit Juice - Small,Beverages,90,70
+P034,Fruit Juice - Regular,Beverages,175,131
+P035,Fruit Juice - Family,Beverages,280,197
+P036,Soda - Small,Beverages,45,35
+P037,Soda - Regular,Beverages,75,61
+P038,Energy Drink - Regular,Beverages,125,103
+P039,Tomatoes - Small,Fresh Produce,50,40
+P040,Tomatoes - Regular,Fresh Produce,75,56
+P041,Onions - Small,Fresh Produce,50,38
+P042,Onions - Regular,Fresh Produce,85,73
+P043,Onions - Family,Fresh Produce,165,120
+P044,Kale (Sukuma) - Small,Fresh Produce,25,21
+P045,Kale (Sukuma) - Regular,Fresh Produce,40,33
+P046,Kale (Sukuma) - Family,Fresh Produce,70,51
+P047,Potatoes - Regular,Fresh Produce,95,83
+P048,Potatoes - Family,Fresh Produce,170,131
+P049,Bananas - Small,Fresh Produce,40,32
+P050,Avocados - Small,Fresh Produce,40,29
+P051,Avocados - Family,Fresh Produce,115,95
+P052,Cabbage - Family,Fresh Produce,95,79
+P053,Carrots - Small,Fresh Produce,50,37
+P054,Carrots - Regular,Fresh Produce,80,62
+P055,Carrots - Family,Fresh Produce,150,117
+P056,Laundry Soap Bar - Regular,Household & Cleaning,85,64
+P057,Washing Powder - Small,Household & Cleaning,125,104
+P058,Dish Wash Liquid - Small,Household & Cleaning,105,90
+P059,Dish Wash Liquid - Family,Household & Cleaning,330,242
+P060,Toilet Paper 4pk - Small,Household & Cleaning,105,77
+P061,Toilet Paper 4pk - Regular,Household & Cleaning,205,164
+P062,Toilet Paper 4pk - Family,Household & Cleaning,340,265
+P063,Bleach - Small,Household & Cleaning,90,69
+P064,Bleach - Regular,Household & Cleaning,155,136
+P065,Bleach - Family,Household & Cleaning,290,198
+P066,Matchbox 10pk - Small,Household & Cleaning,25,20
+P067,Matchbox 10pk - Regular,Household & Cleaning,40,30
+P068,Matchbox 10pk - Family,Household & Cleaning,70,54
+P069,Toothpaste - Small,Personal Care,85,58
+P070,Toothpaste - Regular,Personal Care,140,98
+P071,Toothpaste - Family,Personal Care,295,210
+P072,Body Lotion - Small,Personal Care,180,145
+P073,Body Lotion - Family,Personal Care,550,481
+P074,Shampoo - Small,Personal Care,170,133
+P075,Shampoo - Regular,Personal Care,275,222
+P076,Shampoo - Family,Personal Care,475,325
+P077,Sanitary Pads - Regular,Personal Care,120,104
+P078,Deodorant - Regular,Personal Care,245,167
+P079,Deodorant - Family,Personal Care,425,324
+P080,Biscuits - Regular,Snacks & Confectionery,55,45
+P081,Chocolate Bar - Small,Snacks & Confectionery,55,42
+P082,Chocolate Bar - Regular,Snacks & Confectionery,100,77
+P083,Peanuts - Small,Snacks & Confectionery,40,28
+P084,Peanuts - Regular,Snacks & Confectionery,75,62
+P085,Peanuts - Family,Snacks & Confectionery,115,90
+P086,Mandazi Mix - Small,Snacks & Confectionery,65,52
+P087,Mandazi Mix - Regular,Snacks & Confectionery,110,76
+P088,Mandazi Mix - Family,Snacks & Confectionery,210,164
+P089,Sweets Pack - Family,Snacks & Confectionery,70,55
+P090,Baby Diapers - Small,Baby & Health,535,454
+P091,Baby Diapers - Family,Baby & Health,1790,1403
+P092,Baby Wipes - Regular,Baby & Health,220,189
+P093,Baby Cereal - Small,Baby & Health,310,236
+P094,Baby Cereal - Regular,Baby & Health,505,384
+P095,Pain Relief Tablets - Small,Baby & Health,80,69
+P096,Hand Sanitizer - Small,Baby & Health,100,83
+P097,Hand Sanitizer - Regular,Baby & Health,160,115
+P098,Hand Sanitizer - Family,Baby & Health,305,217
