@@ -1,0 +1,8 @@
+test,p_value,effect,holm_adjusted_p,significant_at_5%
+1. Weekend vs weekday revenue (Welch),7.5e-33,+25% daily revenue,4.5e-32,Yes
+2a. Promotion: daily units per product (Wilcoxon),0.4,+0.02 units/day,,(see 2b)
+2b. Promotion: daily net revenue per product (Wilcoxon),1.1e-11,-14% net revenue,5.4e-11,Yes
+3. M-Pesa vs cash basket value (Welch),0.6,-3 KES per basket,1,No
+4. Inflation vs average basket (Pearson),0.35,r = -0.20,1,No
+5. Loyalty tier vs spend per customer (Kruskal-Wallis),0.3,epsilon-sq = 0.0005,1,No
+6. Payment method vs location type (chi-square),0.68,Cramer's V = 0.005,1,No
