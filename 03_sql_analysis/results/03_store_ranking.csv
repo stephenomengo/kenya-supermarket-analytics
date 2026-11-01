@@ -1,0 +1,11 @@
+store_name,county,location_type,revenue_kes,share_pct,overall_rank,rank_in_type,transactions,avg_basket_kes
+Westlands Fresh Mart,Nairobi,Urban,12897967,16.3,1,1,18612,693
+Kasarani Value Stop,Nairobi,Urban,10755295,13.6,2,2,15388,699
+Nyali Family Supermarket,Mombasa,Urban,9933616,12.6,3,3,14130,703
+Kisumu Lakeside Mart,Kisumu,Urban,8412020,10.7,4,4,11804,713
+Nakuru Town Grocers,Nakuru,Urban,8284691,10.5,5,5,11736,706
+Eldoret Highlands Mart,Uasin Gishu,Urban,7485729,9.5,6,6,10765,695
+Machakos Market Basket,Machakos,Peri-urban,5926838,7.5,7,1,8464,700
+Nyeri Central Stores,Nyeri,Peri-urban,5813143,7.4,8,2,8213,708
+Kisii Hilltop Mart,Kisii,Peri-urban,4961007,6.3,9,3,7011,708
+Kitale Farmers Mart,Trans Nzoia,Rural,4419800,5.6,10,1,6079,727

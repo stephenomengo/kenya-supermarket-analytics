@@ -1,0 +1,7 @@
+payment_method,baskets,share_pct,avg_basket_kes
+M-Pesa,58568,52.2,702
+Cash,31219,27.8,704
+Card,15558,13.9,708
+Airtel Money,4533,4.0,712
+Other,2237,2.0,692
+Unknown,87,0.1,320

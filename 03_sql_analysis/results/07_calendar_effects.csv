@@ -1,0 +1,7 @@
+factor,flag,days,avg_daily_revenue_kes
+Payday window,f,528,100090
+Payday window,t,203,128289
+Public holiday,f,713,106969
+Public holiday,t,18,145607
+Weekend,f,521,100625
+Weekend,t,210,126022

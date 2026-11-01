@@ -1,0 +1,11 @@
+promo_id,scope,target,discount_pct,lines_sold,units_sold,revenue_kes,discount_cost_kes
+PR015,Category,Staples & Grains,15,2543,4067,511415,90250
+PR022,Category,Staples & Grains,15,2136,3420,428260,75575
+PR013,Category,Staples & Grains,15,1638,2648,333408,58837
+PR058,Category,Fresh Produce,25,1106,1794,137730,45910
+PR048,Category,Personal Care,20,458,771,152564,38141
+PR004,Category,Personal Care,15,606,973,213958,37757
+PR006,Category,Household & Cleaning,20,894,1430,137416,34354
+PR040,Category,Staples & Grains,15,966,1549,193205,34095
+PR033,Category,Beverages,25,454,740,73943,24648
+PR051,Category,Baby & Health,20,183,295,93948,23487
