@@ -1,0 +1,11 @@
+store_id,store_name,county,location_type,open_date
+S01,Westlands Fresh Mart,Nairobi,Urban,2021-10-25
+S02,Kasarani Value Stop,Nairobi,Urban,2016-06-06
+S03,Nyali Family Supermarket,Mombasa,Urban,2015-03-19
+S04,Kisumu Lakeside Mart,Kisumu,Urban,2020-02-13
+S05,Nakuru Town Grocers,Nakuru,Urban,2017-12-03
+S06,Eldoret Highlands Mart,Uasin Gishu,Urban,2018-09-27
+S07,Nyeri Central Stores,Nyeri,Peri-urban,2015-08-22
+S08,Machakos Market Basket,Machakos,Peri-urban,2017-12-18
+S09,Kisii Hilltop Mart,Kisii,Peri-urban,2020-02-24
+S10,Kitale Farmers Mart,Trans Nzoia,Rural,2017-11-03

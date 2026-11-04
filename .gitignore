@@ -1,3 +1,4 @@
 data/clean/sales_clean.csv
+05_dashboard/data/fact_sales.csv
 __pycache__/
 .ipynb_checkpoints/

@@ -1,0 +1,12 @@
+{
+  "name": "Kenya Retail",
+  "dataColors": ["#1F5FA8", "#E07B00", "#9AA5B1", "#2E8B57", "#8E5EA2", "#C0392B", "#16A2B8", "#7F8C8D"],
+  "background": "#FFFFFF",
+  "foreground": "#1B2733",
+  "tableAccent": "#1F5FA8",
+  "textClasses": {
+    "title": {"fontFace": "Segoe UI Semibold", "fontSize": 12, "color": "#1B2733"},
+    "label": {"fontFace": "Segoe UI", "fontSize": 10, "color": "#1B2733"},
+    "callout": {"fontFace": "Segoe UI Semibold", "fontSize": 28, "color": "#1F5FA8"}
+  }
+}

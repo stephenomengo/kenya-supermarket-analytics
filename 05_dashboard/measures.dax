@@ -1,0 +1,69 @@
+// ============================================================
+// DAX measures for the Kenyan supermarket dashboard
+// Create them in a dedicated table: Home > Enter data > name it "_Measures", then
+// right-click it > New measure and paste each one. Mark dim_date as the date table first.
+// "Expected" values are the numbers from the SQL and EDA milestones, to check your cards.
+// ============================================================
+
+// ---------- Core KPIs ----------
+Revenue = SUM(fact_sales[revenue])                                   // Expected: 78,890,104
+Gross Profit = SUM(fact_sales[gross_profit])                         // Expected: 17,284,668
+Gross Margin % = DIVIDE([Gross Profit], [Revenue])                   // Expected: 21.9%
+Transactions = DISTINCTCOUNT(fact_sales[transaction_id])             // Expected: 112,202
+Avg Basket = DIVIDE([Revenue], [Transactions])                       // Expected: 703
+Units Sold = SUM(fact_sales[quantity])
+Identified Customers = DISTINCTCOUNTNOBLANK(fact_sales[customer_id]) // Expected: 4,891
+
+// ---------- Growth ----------
+Revenue LY = CALCULATE([Revenue], SAMEPERIODLASTYEAR(dim_date[date]))
+Revenue YoY % = DIVIDE([Revenue] - [Revenue LY], [Revenue LY])       // Dec 2024 vs Dec 2023: -4.7%
+Revenue PM = CALCULATE([Revenue], DATEADD(dim_date[date], -1, MONTH))
+Revenue MoM % = DIVIDE([Revenue] - [Revenue PM], [Revenue PM])
+Revenue 7-day Avg =
+    AVERAGEX(DATESINPERIOD(dim_date[date], MAX(dim_date[date]), -7, DAY), [Revenue])
+
+// ---------- Calendar effects ----------
+Avg Daily Revenue = AVERAGEX(VALUES(dim_date[date]), [Revenue])      // Expected overall: 107,921
+Weekend Uplift % =
+    VAR weekend = CALCULATE([Avg Daily Revenue], dim_date[day_type] = "Weekend")
+    VAR weekday = CALCULATE([Avg Daily Revenue], dim_date[day_type] = "Weekday")
+    RETURN DIVIDE(weekend, weekday) - 1                              // Expected: +25.2%
+Payday Uplift % =
+    VAR payday = CALCULATE([Avg Daily Revenue], dim_date[payday_type] = "Payday window")
+    VAR other = CALCULATE([Avg Daily Revenue], dim_date[payday_type] = "Other days")
+    RETURN DIVIDE(payday, other) - 1                                 // Expected: +28.2%
+Holiday Uplift % =
+    VAR holiday = CALCULATE([Avg Daily Revenue], dim_date[holiday_type] = "Public holiday")
+    VAR other = CALCULATE([Avg Daily Revenue], dim_date[holiday_type] = "Other days")
+    RETURN DIVIDE(holiday, other) - 1                                // Expected: +36.1%
+Avg Inflation 12m = AVERAGE(dim_date[inflation_12m])
+
+// ---------- Stores and products ----------
+Store Share % = DIVIDE([Revenue], CALCULATE([Revenue], ALLSELECTED(dim_store)))   // Westlands: 16.3%
+Category Share % = DIVIDE([Revenue], CALCULATE([Revenue], ALLSELECTED(dim_product)))
+Top Store = MAXX(TOPN(1, ALLSELECTED(dim_store[store_name]), [Revenue], DESC), dim_store[store_name])
+Top 10 Products Share % =
+    VAR top10 = TOPN(10, ALLSELECTED(dim_product[product_name]), [Revenue], DESC)
+    RETURN DIVIDE(CALCULATE([Revenue], top10), CALCULATE([Revenue], ALLSELECTED(dim_product[product_name])))   // Expected: 47.7%
+
+// ---------- Promotions ----------
+Gross Sales at List Price = SUMX(fact_sales, fact_sales[quantity] * fact_sales[unit_price])
+Discount Cost = [Gross Sales at List Price] - [Revenue]              // Expected: 645,121
+Discount Cost % = DIVIDE([Discount Cost], [Gross Sales at List Price])   // Expected: 0.8%
+Promo Lines % = DIVIDE(CALCULATE(COUNTROWS(fact_sales), fact_sales[has_promo] = 1), COUNTROWS(fact_sales))   // Expected: 6.0%
+
+// ---------- Customers and payments ----------
+Guest Revenue % = DIVIDE(CALCULATE([Revenue], fact_sales[is_guest] = 1), [Revenue])   // Expected: 41.9%
+Revenue per Customer = DIVIDE(CALCULATE([Revenue], fact_sales[is_guest] = 0), [Identified Customers])
+Customers = COUNTROWS(dim_customer)
+Basket Share % = DIVIDE([Transactions], CALCULATE([Transactions], ALLSELECTED(fact_sales[payment_method])))   // M-Pesa: about 52%
+
+// ---------- Forecast (test period, from milestone 6) ----------
+Actual Revenue (weekly) = SUM(forecast_weekly[actual])
+Forecast Revenue = SUM(forecast_weekly[forecast])
+Baseline Forecast = SUM(forecast_weekly[baseline_last4])
+Forecast MAE = AVERAGE(forecast_weekly[abs_error])                   // Expected: 8,130
+Baseline MAE = AVERAGE(forecast_weekly[baseline_abs_error])          // Expected: 11,848
+Forecast Improvement % = 1 - DIVIDE([Forecast MAE], [Baseline MAE])  // Expected: 31%
+Forecast MAPE % = AVERAGE(forecast_weekly[abs_pct_error])            // Expected: 12.0%
+Baseline MAPE % = AVERAGE(forecast_weekly[baseline_abs_pct_error])   // Expected: 17.3%

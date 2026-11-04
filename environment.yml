@@ -1,0 +1,15 @@
+name: kenya-retail
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pandas>=2.0
+  - numpy>=1.24
+  - matplotlib>=3.7
+  - scipy>=1.10
+  - statsmodels>=0.14
+  - scikit-learn>=1.3
+  - jupyter
+  - nbconvert
+  - ipykernel
